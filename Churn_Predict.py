@@ -62,7 +62,7 @@ st.write('')
 #Model Load
 if predict_button:
        col1, col2, col3=st.columns(3)
-       model_loaded = pickle.load(open("D:\Data Science\Latihan-Modul3\Capstone\model_customer_churn.sav", "rb"))
+       model_loaded = pickle.load(open("model_customer_churn.sav", "rb"))
        predict = model_loaded.predict(df_predict)
        proba=model_loaded.predict_proba(df_predict)
        if predict == 0:
@@ -95,7 +95,7 @@ predictDataset=st.sidebar.button("🔍 Predict Dataset")
 
 if predictDataset :
        if file==False:
-              model_loaded = pickle.load(open("D:\Data Science\Latihan-Modul3\Capstone\model_customer_churn.sav", "rb"))
+              model_loaded = pickle.load(open("model_customer_churn.sav", "rb"))
               predDataset = model_loaded.predict(dfUp)
               probaDataset=model_loaded.predict_proba(dfUp)
               dfUp['Churn']=predDataset
